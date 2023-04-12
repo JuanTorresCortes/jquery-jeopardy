@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jeopardy</title>
+</head>
+<body>
+    <div id="mainContainer">
+        <h2>Cheat Code ▶︎ <span id="cheatCode"></span></h2>
+        <h1>JEOPARDY!</h1>
+        <div>YOUR SCORE: <span id="score">0</span></div>
+        <grid class="gridContainer">
+            <div class="grid-item value100"><button onclick="gridClicked(100)">100</button></div>
+            <div class="grid-item value100"><button onclick="gridClicked(100)">100</button></div>
+            <div class="grid-item value100"><button onclick="gridClicked(100)">100</button></div>
+            <div class="grid-item value100"><button onclick="gridClicked(100)">100</button></div>
+            <div class="grid-item value100"><button onclick="gridClicked(100)">100</button></div>
+            <div class="grid-item value200"><button onclick="gridClicked(200)">200</button></div>
+            <div class="grid-item value200"><button onclick="gridClicked(200)">200</button></div>
+            <div class="grid-item value200"><button onclick="gridClicked(200)">200</button></div>
+            <div class="grid-item value200"><button onclick="gridClicked(200)">200</button></div>
+            <div class="grid-item value200"><button onclick="gridClicked(200)">200</button></div>
+            <div class="grid-item value300"><button onclick="gridClicked(300)">300</button></div>
+            <div class="grid-item value300"><button onclick="gridClicked(300)">300</button></div>
+            <div class="grid-item value300"><button onclick="gridClicked(300)">300</button></div>
+            <div class="grid-item value300"><button onclick="gridClicked(300)">300</button></div>
+            <div class="grid-item value300"><button onclick="gridClicked(300)">300</button></div>
+            <div class="grid-item value400"><button onclick="gridClicked(400)">400</button></div>
+            <div class="grid-item value400"><button onclick="gridClicked(400)">400</button></div>
+            <div class="grid-item value400"><button onclick="gridClicked(400)">400</button></div>
+            <div class="grid-item value400"><button onclick="gridClicked(400)">400</button></div>
+            <div class="grid-item value400"><button onclick="gridClicked(400)">400</button></div>
+            <div class="grid-item value500"><button onclick="gridClicked(500)">500</button></div>
+            <div class="grid-item value500"><button onclick="gridClicked(500)">500</button></div>
+            <div class="grid-item value500"><button onclick="gridClicked(500)">500</button></div>
+            <div class="grid-item value500"><button onclick="gridClicked(500)">500</button></div>
+            <div class="grid-item value500"><button onclick="gridClicked(500)">500</button></div> 
+        </grid>
+        
+        <form id="answerForm">
+            <div id="question"></div><br>
+
+            <input type="radio" id="input1" name="answer" value="" checked>
+            <label for="answer1" id="label1"></label><br>
+
+            <input type="radio" id="input2" name="answer" value="">
+            <label for="answer2" id="label2"></label><br><br>
+
+            <input type="submit" value="Submit">    
+        </form>
+        
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script src="main.js" ></script>
+</html>
