@@ -28,7 +28,11 @@ async function readJeopardyData() {
 readJeopardyData();
 
 ////create question and answer + decoy////
-function gridClicked(val) {
+function gridClicked(button,val) {
+  
+  button.disabled = true;
+  button.style.color = "red"
+
   value = val;
   if (val === 100) {
     myQuestions = questionFor100;
@@ -75,6 +79,8 @@ let label3 = document.querySelector("#label3");
 let input4 = document.querySelector("#input4");
 let label4 = document.querySelector("#label4");
 
+
+
 ////build form///
 function questionRender(q, a, d1) {
   formQuestion.innerText = q;
@@ -102,6 +108,9 @@ function questionRender(q, a, d1) {
 ////check my answers /////
 myForm.addEventListener("submit", function (event) {
   event.preventDefault();
+
+  let cheat = document.querySelector("#cheatCode");
+  cheat.innerText = "";
 
   if (input1.checked) {
     if (input1.value === answer) {

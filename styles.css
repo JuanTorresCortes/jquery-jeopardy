@@ -1,14 +1,42 @@
+body{
+  background-color: blue;
+  background-image: url(img/jeopardy2.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#cheatCode{
+  margin: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#mainContainer{
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
 .gridContainer {
     width: 500px;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    background-color: #2196F3;
+    background-color: #0c03fd;
     padding: 10px;
   }
   .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgb(4, 0, 255);
     padding: 11px;
     font-size: 30px;
     text-align: center;
+  }
+
+  #question{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .but-g{
+    color: rgb(46, 105, 7);
   }

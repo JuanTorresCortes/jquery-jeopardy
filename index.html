@@ -8,41 +8,42 @@
     <title>jeopardy</title>
 </head>
 <body>
+    <h2>Cheat Code ▶︎ <span id="cheatCode"></span></h2><br>
     <div id="mainContainer">
-        <h2>Cheat Code ▶︎ <span id="cheatCode"></span></h2>
-        <h1>JEOPARDY!</h1>
-        <div>YOUR SCORE: <span id="score">0</span></div>
+        
+        <h1><div>YOUR SCORE: <span id="score">0</span></div></h1>
+        
         <grid class="gridContainer">
-            <div class="grid-item value100"><button onclick="gridClicked(100)">100</button></div>
-            <div class="grid-item value100"><button onclick="gridClicked(100)">100</button></div>
-            <div class="grid-item value100"><button onclick="gridClicked(100)">100</button></div>
-            <div class="grid-item value100"><button onclick="gridClicked(100)">100</button></div>
-            <div class="grid-item value100"><button onclick="gridClicked(100)">100</button></div>
-            <div class="grid-item value200"><button onclick="gridClicked(200)">200</button></div>
-            <div class="grid-item value200"><button onclick="gridClicked(200)">200</button></div>
-            <div class="grid-item value200"><button onclick="gridClicked(200)">200</button></div>
-            <div class="grid-item value200"><button onclick="gridClicked(200)">200</button></div>
-            <div class="grid-item value200"><button onclick="gridClicked(200)">200</button></div>
-            <div class="grid-item value300"><button onclick="gridClicked(300)">300</button></div>
-            <div class="grid-item value300"><button onclick="gridClicked(300)">300</button></div>
-            <div class="grid-item value300"><button onclick="gridClicked(300)">300</button></div>
-            <div class="grid-item value300"><button onclick="gridClicked(300)">300</button></div>
-            <div class="grid-item value300"><button onclick="gridClicked(300)">300</button></div>
-            <div class="grid-item value400"><button onclick="gridClicked(400)">400</button></div>
-            <div class="grid-item value400"><button onclick="gridClicked(400)">400</button></div>
-            <div class="grid-item value400"><button onclick="gridClicked(400)">400</button></div>
-            <div class="grid-item value400"><button onclick="gridClicked(400)">400</button></div>
-            <div class="grid-item value400"><button onclick="gridClicked(400)">400</button></div>
-            <div class="grid-item value500"><button onclick="gridClicked(500)">500</button></div>
-            <div class="grid-item value500"><button onclick="gridClicked(500)">500</button></div>
-            <div class="grid-item value500"><button onclick="gridClicked(500)">500</button></div>
-            <div class="grid-item value500"><button onclick="gridClicked(500)">500</button></div>
-            <div class="grid-item value500"><button onclick="gridClicked(500)">500</button></div> 
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,100)">100</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,100)">100</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,100)">100</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,100)">100</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,100)">100</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,200)">200</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,200)">200</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,200)">200</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,200)">200</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,200)">200</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,300)">300</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,300)">300</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,300)">300</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,300)">300</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,300)">300</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,400)">400</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,400)">400</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,400)">400</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,400)">400</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,400)">400</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,500)">500</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,500)">500</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,500)">500</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,500)">500</button></div>
+            <div class="grid-item"><button class="but-g" onclick="gridClicked(this,500)">500</button></div> 
         </grid>
         
         <form id="answerForm">
-            <div id="question"></div><br>
-
+            <h3> <div id="question"> </div></h3><br>
+            
             <input type="radio" id="input1" name="answer" value="" checked>
             <label for="answer1" id="label1"></label><br>
 
