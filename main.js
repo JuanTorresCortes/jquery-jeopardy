@@ -7,11 +7,14 @@ let questionFor300 = [];
 let questionFor400 = [];
 let questionFor500 = [];
 
-let scoreCount = 0;
+let scoreCount = 0;// prize Money 
 let answer = "";
 let value = 0;
 let myQuestions = [];
 let length = 0;
+let buttonCount = 0;
+let playCardCount = 0;
+
 
 ////get all my info and push data to appropriate groups based on $$$ VALUE////
 async function readJeopardyData() {
@@ -28,25 +31,34 @@ async function readJeopardyData() {
 readJeopardyData();
 
 ////create question and answer + decoy////
-function gridClicked(button,val) {
-  
-  button.disabled = true;
-  button.style.color = "red"
+function gridClicked(button, val) {
 
+  buttonCount++
+
+  button.disabled = true;
+  button.style.color = "red";
+
+  let max = 0;
   value = val;
+
   if (val === 100) {
     myQuestions = questionFor100;
+    max = 2008;
   } else if (val === 200) {
     myQuestions = questionFor200;
+    max = 6889;
   } else if (val === 300) {
     myQuestions = questionFor300;
+    max = 1946;
   } else if (val === 400) {
     myQuestions = questionFor400;
+    max = 9609;
   } else if (val === 500) {
     myQuestions = questionFor500;
+    max = 1995;
   }
 
-  let randomIndex = Math.floor(Math.random() * (2009 - 1 + 1) + 1);
+  let randomIndex = Math.floor(Math.random() * (max - 1 + 1) + 1);
 
   //// get a question and answer & set var answer to a////
   for (const item of myQuestions) {
@@ -56,7 +68,7 @@ function gridClicked(button,val) {
     answer = a;
 
     for (const item of myQuestions) {
-      let randomIndex = Math.floor(Math.random() * (2009 - 1 + 1) + 1);
+      let randomIndex = Math.floor(Math.random() * (max - 1 + 1) + 1);
       let selectedItem = item[randomIndex];
       let d1 = selectedItem.answer;
       questionRender(q, a, d1);
@@ -79,10 +91,9 @@ let label3 = document.querySelector("#label3");
 let input4 = document.querySelector("#input4");
 let label4 = document.querySelector("#label4");
 
-
-
-////build form///
+////build form UI///
 function questionRender(q, a, d1) {
+
   formQuestion.innerText = q;
 
   let cheat = document.querySelector("#cheatCode");
@@ -118,11 +129,15 @@ myForm.addEventListener("submit", function (event) {
       scoreCount = scoreCount + value;
       let score = document.querySelector("#score");
       score.innerText = scoreCount;
+      gameOver(buttonCount);
+
     } else if (input1.value !== answer) {
       alert(`wrong answer penalty of $${value}`);
       scoreCount = scoreCount - value;
       let score = document.querySelector("#score");
       score.innerText = scoreCount;
+      gameOver(buttonCount);
+
     }
   } else if (input2.checked) {
     if (input2.value === answer) {
@@ -130,27 +145,25 @@ myForm.addEventListener("submit", function (event) {
       scoreCount = scoreCount + value;
       let score = document.querySelector("#score");
       score.innerText = scoreCount;
+      gameOver(buttonCount);
+
     } else if (input2.value !== answer) {
       alert(`wrong answer penalty of $${value}`);
       scoreCount = scoreCount - value;
       let score = document.querySelector("#score");
       score.innerText = scoreCount;
+      gameOver(buttonCount);
     }
   }
 
   ////zero out////
   formQuestion.innerText = "";
+
   input1.value = "";
   label1.innerText = "";
 
   input2.value = "";
   label2.innerText = "";
-
-  input3.value = "";
-  label3.innerText = "";
-
-  input4.value = "";
-  label4.innerText = "";
 
   answer = "";
   value = 0;
@@ -158,3 +171,17 @@ myForm.addEventListener("submit", function (event) {
   length = 0;
   input1.checked = true;
 });
+
+function gameOver(buttonCount){
+  let buttonsClicked = buttonCount;
+
+//console.log(`buttons clicked = ${buttonsClicked}`)
+
+  if(buttonsClicked === 25){
+    let yourScoreMessage = document.querySelector("#yourScore");
+    yourScoreMessage.innerText = "";
+    
+    let finalMessage = document.querySelector("#gameOver");
+    finalMessage.innerText = `Game Over Your final score is ${scoreCount}`
+  } 
+}
