@@ -7,14 +7,13 @@ let questionFor300 = [];
 let questionFor400 = [];
 let questionFor500 = [];
 
-let scoreCount = 0;// prize Money 
+let scoreCount = 0; // prize Money
 let answer = "";
 let value = 0;
 let myQuestions = [];
 let length = 0;
 let buttonCount = 0;
 let playCardCount = 0;
-
 
 ////get all my info and push data to appropriate groups based on $$$ VALUE////
 async function readJeopardyData() {
@@ -31,9 +30,10 @@ async function readJeopardyData() {
 readJeopardyData();
 
 ////create question and answer + decoy////
+/// button is passed by a obj reference using the this key word
+///
 function gridClicked(button, val) {
-
-  buttonCount++
+  buttonCount++;
 
   button.disabled = true;
   button.style.color = "red";
@@ -85,15 +85,8 @@ let label1 = document.querySelector("#label1");
 let input2 = document.querySelector("#input2");
 let label2 = document.querySelector("#label2");
 
-let input3 = document.querySelector("#input3");
-let label3 = document.querySelector("#label3");
-
-let input4 = document.querySelector("#input4");
-let label4 = document.querySelector("#label4");
-
 ////build form UI///
 function questionRender(q, a, d1) {
-
   formQuestion.innerText = q;
 
   let cheat = document.querySelector("#cheatCode");
@@ -130,14 +123,12 @@ myForm.addEventListener("submit", function (event) {
       let score = document.querySelector("#score");
       score.innerText = scoreCount;
       gameOver(buttonCount);
-
     } else if (input1.value !== answer) {
       alert(`wrong answer penalty of $${value}`);
       scoreCount = scoreCount - value;
       let score = document.querySelector("#score");
       score.innerText = scoreCount;
       gameOver(buttonCount);
-
     }
   } else if (input2.checked) {
     if (input2.value === answer) {
@@ -146,7 +137,6 @@ myForm.addEventListener("submit", function (event) {
       let score = document.querySelector("#score");
       score.innerText = scoreCount;
       gameOver(buttonCount);
-
     } else if (input2.value !== answer) {
       alert(`wrong answer penalty of $${value}`);
       scoreCount = scoreCount - value;
@@ -170,18 +160,37 @@ myForm.addEventListener("submit", function (event) {
   myQuestions = [];
   length = 0;
   input1.checked = true;
+  gameOver(buttonCount);
 });
 
-function gameOver(buttonCount){
+/// this function ends game when the last submit is entered and buttonsCount is @ 25///
+/// the submit but will be converted and a new event is added that when clicked will reset the window obj and refresh page;
+function gameOver(buttonCount) {
   let buttonsClicked = buttonCount;
 
-//console.log(`buttons clicked = ${buttonsClicked}`)
-
-  if(buttonsClicked === 25){
+  if (buttonsClicked === 25) {
     let yourScoreMessage = document.querySelector("#yourScore");
     yourScoreMessage.innerText = "";
-    
+
     let finalMessage = document.querySelector("#gameOver");
-    finalMessage.innerText = `Game Over Your final score is ${scoreCount}`
-  } 
+    finalMessage.innerText = `Game Over Your final score is ${scoreCount}`;
+
+    input1.value = "12345";
+    label1.innerText = "Thanks for playing";
+
+    input2.value = "12345";
+    label2.innerText = "Play again";
+
+   let submitBut = document.querySelector("#submitBut");
+   submitBut.type = "button"
+   submitBut.value = "reset"
+   submitBut.addEventListener("click", function(){
+    window.location.reload()
+   })
+
+  }
 }
+
+
+ 
+
